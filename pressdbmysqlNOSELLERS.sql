@@ -83,16 +83,13 @@ CREATE TABLE purchase_cart (
   );
   
   CREATE table billing (
-  billingID int not null auto_increment primary key,
-  billingAddress varchar(255) not null,
-  purchaseMethod varchar(255) not null,
-  shippingAddress varchar(255) not null,
-  firstName varchar(255) not null,
-  lastName varchar(255) not null,
-  country varchar(255) not null,
-  state varchar(255) not null,
-  purchaseid int not null,
-  foreign key (purchaseid) references purchase_cart(purchaseid)
+  billingID int auto_increment primary key,
+  firstname varchar(255) ,
+  lastname varchar(255) ,
+  country varchar(255) ,
+  state varchar(255) ,
+  shippingaddress varchar(255) ,
+  cardnumber varchar(255) 
   );
 
   
@@ -139,13 +136,14 @@ values ('10','T-Shirt', 'Port and Company Shirt','Very cool shirt kinda based ng
 
 select * from users;
 
+select * from billing;
+
 insert into users (username,password,email) values ('goku', 'goku','goku@gmail.com');
 insert into users (username,password,email) values ('rick' , 'roll', 'rickroll12@gmail.com');
 
 select * from products;
 
-
-
-
-
+select * from purchase_cart;
+select * from billing;
+select * from order_details;
 
